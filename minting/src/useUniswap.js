@@ -2,10 +2,9 @@ import IUniswapV2Router02 from "@uniswap/v2-periphery/build/IUniswapV2Router02.j
 import IUniswapV2Factory from "@uniswap/v2-core/build/IUniswapV2Factory.json";
 import GodlikeContract from "./GODLIKE.json";
 import Pair from "./PAIR.json";
-import { useState } from "react/cjs/react.development";
+import { useState } from "react";
 import useWeb3 from "./useWeb3";
 import { toWei, fromWei } from "./weiConverter";
-import axios from "axios";
 
 export default () => {
   const tokenAddress = "0x08692Dd9EEf826805a5b4bD4d1c790f25B188068";
@@ -17,7 +16,6 @@ export default () => {
     useContract,
     loading: web3Loading,
     reload,
-    balance: ethBalance,
   } = useWeb3();
 
   // Router contract to make swaps

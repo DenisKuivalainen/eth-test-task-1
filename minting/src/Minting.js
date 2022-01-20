@@ -31,7 +31,7 @@ export default () => {
   const transferTo = async () => {
     try {
       setIsPending(true);
-      await contract.methods.transfer(to, toWei(100)).send({ from: account });
+      await contract.methods.transfer(to, toWei(1)).send({ from: account });
       setIsPending(false);
       setTo("");
       reload();

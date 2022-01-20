@@ -8,7 +8,7 @@ To mint 10 tokens (what will be enough), it is required 10 * 1 / 16384 ETH. So o
 * https://www.moonborrow.com/
 
 ### Testing webpage
-* https://eth-task-1.vercel.app 
+* http://DenisKuivalainen.github.io/eth-test-task-1
 
 The page consists of 2 independent components, so ballance will not be updated on tokens swap.
 
