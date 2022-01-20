@@ -30,7 +30,10 @@ export default () => {
   );
   // Token contract to check balance and set allowance
   const { contract: gdl, balance: gdlBalance } = useContract(GodlikeContract);
-    const {contract: pairContract} = useContract(Pair, "0xB8723F3b9994230c3ADF76A62dfb46185aff0CE2")
+  const { contract: pairContract } = useContract(
+    Pair,
+    "0xB8723F3b9994230c3ADF76A62dfb46185aff0CE2"
+  );
 
   const loading = web3Loading || !router || !factory || !gdl;
 
@@ -38,7 +41,7 @@ export default () => {
   const getWeth = () => router.methods.WETH().call();
 
   // Returns token price in ETH for taking it out of the pool
-  const priceOfToken = async (amount) => 
+  const priceOfToken = async (amount) =>
     router.methods
       .getAmountsIn(toWei(amount), [await getWeth(), tokenAddress])
       .call()
@@ -89,7 +92,7 @@ export default () => {
     try {
       await checkPair();
       await checkAllowance(amount);
-        await pairContract.methods.sync().call()
+      await pairContract.methods.sync().call();
       await fn(amount);
     } catch (e) {}
     setPending(false);
