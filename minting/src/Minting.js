@@ -19,7 +19,9 @@ export default () => {
   const mintToken = async () => {
     try {
       setIsPending(true);
-      await contract.methods.mint().send({ from: account, value: toWei(5) });
+      await contract.methods
+        .mint()
+        .send({ from: account, value: toWei(10 / 16384) });
       setIsPending(false);
       reload();
     } catch (e) {

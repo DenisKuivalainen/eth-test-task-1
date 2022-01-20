@@ -1,12 +1,14 @@
 import IUniswapV2Router02 from "@uniswap/v2-periphery/build/IUniswapV2Router02.json";
 import IUniswapV2Factory from "@uniswap/v2-core/build/IUniswapV2Factory.json";
 import GodlikeContract from "./GODLIKE.json";
+import Pair from "./PAIR.json";
 import { useState } from "react/cjs/react.development";
 import useWeb3 from "./useWeb3";
 import { toWei, fromWei } from "./weiConverter";
+import axios from "axios";
 
 export default () => {
-  const tokenAddress = "0x6d005D654D9C141fF1004394649Bc4686B29cfC8";
+  const tokenAddress = "0x08692Dd9EEf826805a5b4bD4d1c790f25B188068";
   const routerAddress = "0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D";
   const [pending, setPending] = useState(false);
 
@@ -28,6 +30,7 @@ export default () => {
   );
   // Token contract to check balance and set allowance
   const { contract: gdl, balance: gdlBalance } = useContract(GodlikeContract);
+    const {contract: pairContract} = useContract(Pair, "0xB8723F3b9994230c3ADF76A62dfb46185aff0CE2")
 
   const loading = web3Loading || !router || !factory || !gdl;
 
@@ -35,7 +38,7 @@ export default () => {
   const getWeth = () => router.methods.WETH().call();
 
   // Returns token price in ETH for taking it out of the pool
-  const priceOfToken = async (amount) =>
+  const priceOfToken = async (amount) => 
     router.methods
       .getAmountsIn(toWei(amount), [await getWeth(), tokenAddress])
       .call()
@@ -57,9 +60,11 @@ export default () => {
       .getPair(tokenAddress, wethAddress)
       .call();
     const pairNotExists = pair === "0x0000000000000000000000000000000000000000";
-
     if (pairNotExists)
-      await factory.methods.createPair(tokenAddress, wethAddress).call();
+      await factory.methods
+        .createPair(tokenAddress, wethAddress)
+        .call()
+        .then(console.log);
   };
 
   // Check if user allowed to use token
@@ -84,6 +89,7 @@ export default () => {
     try {
       await checkPair();
       await checkAllowance(amount);
+        await pairContract.methods.sync().call()
       await fn(amount);
     } catch (e) {}
     setPending(false);
@@ -117,7 +123,7 @@ export default () => {
         )
         .send({
           from: account,
-          value: fixToWei((await priceOfToken(amount)) * 0.9),
+          value: fixToWei((await priceOfToken(amount)) * 1.1),
         });
     }),
 

@@ -3,18 +3,23 @@
 
 
 "@uniswap/lib@4.0.1-alpha":
-  version "4.0.1-alpha"
-  resolved "https://registry.yarnpkg.com/@uniswap/lib/-/lib-4.0.1-alpha.tgz#2881008e55f075344675b3bca93f020b028fbd02"
-  integrity sha512-f6UIliwBbRsgVLxIaBANF6w09tYqc6Y/qXdsrbEmXHyFA7ILiKrIwRFXe1yOg8M3cksgVsO9N7yuL2DdCGQKBA==
+  "integrity" "sha512-f6UIliwBbRsgVLxIaBANF6w09tYqc6Y/qXdsrbEmXHyFA7ILiKrIwRFXe1yOg8M3cksgVsO9N7yuL2DdCGQKBA=="
+  "resolved" "https://registry.npmjs.org/@uniswap/lib/-/lib-4.0.1-alpha.tgz"
+  "version" "4.0.1-alpha"
 
 "@uniswap/v2-core@1.0.0":
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/@uniswap/v2-core/-/v2-core-1.0.0.tgz#e0fab91a7d53e8cafb5326ae4ca18351116b0844"
-  integrity sha512-BJiXrBGnN8mti7saW49MXwxDBRFiWemGetE58q8zgfnPPzQKq55ADltEILqOt6VFZ22kVeVKbF8gVd8aY3l7pA==
+  "integrity" "sha512-BJiXrBGnN8mti7saW49MXwxDBRFiWemGetE58q8zgfnPPzQKq55ADltEILqOt6VFZ22kVeVKbF8gVd8aY3l7pA=="
+  "resolved" "https://registry.npmjs.org/@uniswap/v2-core/-/v2-core-1.0.0.tgz"
+  "version" "1.0.0"
 
 "@uniswap/v2-periphery@https://github.com/Uniswap/v2-periphery.git":
-  version "1.1.0-beta.0"
-  resolved "https://github.com/Uniswap/v2-periphery.git#2efa12e0f2d808d9b49737927f0e416fafa5af68"
+  "resolved" "git+ssh://git@github.com/Uniswap/v2-periphery.git#2efa12e0f2d808d9b49737927f0e416fafa5af68"
+  "version" "1.1.0-beta.0"
   dependencies:
     "@uniswap/lib" "4.0.1-alpha"
     "@uniswap/v2-core" "1.0.0"
+
+"openzeppelin-solidity@latest":
+  "integrity" "sha512-hwUZJ5HFWpSed9Toky8XVEPmKbRB7V/P+PwH6q/h9wyIzfYy3QM6qoj+XQv7GgM3UnjJzSsc/FP9XZlcMBQU1A=="
+  "resolved" "https://registry.npmjs.org/openzeppelin-solidity/-/openzeppelin-solidity-4.4.2.tgz"
+  "version" "4.4.2"

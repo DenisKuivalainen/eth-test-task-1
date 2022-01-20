@@ -61,6 +61,7 @@ export default () => {
     setEth(_eth);
   };
 
+  // TODO: add listeners for wallet change
   window.addEventListener("load", getWeb3);
 
   useEffect(() => {

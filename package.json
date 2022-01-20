@@ -13,6 +13,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@uniswap/v2-periphery": "https://github.com/Uniswap/v2-periphery.git"
+    "@uniswap/v2-periphery": "https://github.com/Uniswap/v2-periphery.git",
+    "openzeppelin-solidity": "latest"
   }
 }

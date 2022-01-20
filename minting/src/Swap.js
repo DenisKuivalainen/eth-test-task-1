@@ -10,7 +10,7 @@ export default () => {
       <button onClick={() => u.addLiquidity(2)}>Add 2 GDL to liqidity</button>
       <br />
       <br />
-      <button onClick={() => u.buyToken(1)}>Buy GDL for 0.005 ETH</button>
+      <button onClick={() => u.buyToken(1)}>Buy 1 GDL</button>
       <br />
       <br />
       <button onClick={() => u.sellToken(1)}>Sell 1 GDL</button>
