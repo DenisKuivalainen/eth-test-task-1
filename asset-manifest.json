@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/eth-test-task-1/static/css/main.e6c13ad2.css",
-    "main.js": "/eth-test-task-1/static/js/main.26d00aab.js",
+    "main.js": "/eth-test-task-1/static/js/main.c75ab493.js",
     "index.html": "/eth-test-task-1/index.html",
     "main.e6c13ad2.css.map": "/eth-test-task-1/static/css/main.e6c13ad2.css.map",
-    "main.26d00aab.js.map": "/eth-test-task-1/static/js/main.26d00aab.js.map"
+    "main.c75ab493.js.map": "/eth-test-task-1/static/js/main.c75ab493.js.map"
   },
   "entrypoints": [
     "static/css/main.e6c13ad2.css",
-    "static/js/main.26d00aab.js"
+    "static/js/main.c75ab493.js"
   ]
 }
